@@ -7,6 +7,14 @@ def encode(password):
         encoded_password += str(new_digit) # creating the encoded password
     return encoded_password
 
+def decode(password): # decode method - C. Ronkin
+    decoded_password = ""
+    for digit in password:
+        decoded_password += str((int(digit) - 3)) # decodes each character and adds to decoded password placeholder
+    print(f'The encoded password is {password}, and the original password is {decoded_password}.') # decode greeting
+    return decoded_password
+
+
 def main():
     encoded_password = ""
 
@@ -24,8 +32,8 @@ def main():
                 print("Invalid password.\n")
         elif option == "2":
             # decode option from partner (cole ronkin)
-            # start partner code here:
-            print(f"The encoded password is {encoded_password}, and the original password is {password}.\n")
+            decode(encoded_password)
+            print()
         elif option == "3":
             break
 
