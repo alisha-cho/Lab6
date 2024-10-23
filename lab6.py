@@ -14,18 +14,17 @@ def decode(password): # decode method - C. Ronkin
     print(f'The encoded password is {password}, and the original password is {decoded_password}.') # decode greeting
     return decoded_password
 
-
-def main():
+if __name__ == "__main__":
     encoded_password = ""
 
-    while True: # creates the menu
+    while True:  # creates the menu
         print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
         print("Please enter an option:", end=" ")
         option = input()
 
         if option == "1":
             password = input("Please enter your password to encode: ")
-            if len(password) == 8 and password.isdigit(): # checks to see if entered password is 8 digits and only numbers, if not, prints invalid message
+            if len(password) == 8 and password.isdigit():  # checks to see if entered password is 8 digits and only numbers, if not, prints invalid message
                 encoded_password = encode(password)
                 print("Your password has been encoded and stored!\n")
             else:
@@ -36,6 +35,3 @@ def main():
             print()
         elif option == "3":
             break
-
-if __name__ == "__main__":
-    main()
